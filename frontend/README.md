@@ -22,17 +22,4 @@ To get started with the Task Manager Application, follow these steps:
 
 ## Usage
 
-After starting the application, navigate to `http://localhost:3000` in your web browser to access the Task Manager Application.
-
-- To **add a task**, enter the task details and click the "Add Task" button.
-- To **delete a task**, click the "Delete" button next to the task you wish to remove.
-- To **mark a task as completed**, click the "Mark as Completed" button next to the relevant task.
-
-## Contributing
-
-Contributions to the Task Manager Application are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or fix.
-3. Commit your changes.
-4. Push your branch and open a pull request.
+-you can use open the 'index.html' and view the todoapp

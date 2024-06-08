@@ -1,9 +1,19 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #ebeeef;
 }
 
 h1, h2, h3 {
     text-align: center;
+}
+.task-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.create-task, .tour-task {
+    flex: 1;
+    margin: 10px; /* Adjust margin as needed */
 }
 
 form {
@@ -30,7 +40,7 @@ button {
     width: 100%;
     padding: 10px;
     background-color: #57b846;
-    color: white;
+    color: rgb(253, 247, 247);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -43,7 +53,7 @@ button:hover {
 #taskList {
     max-width: 400px;
     margin: 20px auto;
-    margin-bottom: 180px;
+    margin-bottom: 40px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -53,11 +63,58 @@ button:hover {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
-/* Style for buttons */
-/* Style for buttons with the class name 'custom-button' */
+.todo2{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    font-family: Poppins-Bold;
+    background-color: #f4f4f4;
+
+}
+/* Custom alert box styles */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.custom-alert-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Poppins-Regular;
+    color: #808080;
+    position: absolute;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-alert-box h2 {
+    margin: 0 0 10px;
+}
+
+.custom-alert-box button {
+    background: #57b846;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-alert-box button:hover {
+    background: #808080;
+}
+
 .custom-button {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 4px 10px;
     margin-right: 8px;
     margin-bottom: 10px;
     font: bold 14px/1.5 sans-serif;
@@ -65,10 +122,13 @@ button:hover {
     cursor: pointer;
     border: none;
     border-radius: 4px;
-    width: 100px;
 
   }
-  
+  .buttons-container {
+    display: flex;
+    gap: 10px;
+     /* Adjust the spacing between buttons */
+  }
   /* Style for update button */
   .update-button { background: #4caf50; color: white; }
   
@@ -91,4 +151,61 @@ button:hover {
 
 .task-value {
     margin-left: 10px;
+}
+
+/* Style for the task item */
+.task-item {
+    list-style-type: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the task details container */
+.task-details {
+    margin-bottom: 10px;
+}
+
+/* Style for the task labels */
+.task-label, .due-date-label, .priority-label, .task-id-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for the task values */
+.task-value, .due-date-value, .priority-value, .task-id-value {
+    color: #555;
+}
+
+/* Additional styles for better readability */
+.task-label::after, .due-date-label::after, .priority-label::after, .task-id-label::after {
+    content: ':';
+    margin-right: 5px;
+}
+
+.task-value, .due-date-value, .priority-value, .task-id-value {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.completed-tasks {
+    margin-top: 20px;
+}
+
+.completed-tasks h3 {
+    margin-bottom: 10px;
+}
+
+.completed-task-item {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.completed-task-details {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
 }

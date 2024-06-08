@@ -43,7 +43,7 @@ async def delete_task(task_id: str, current_user: User = Depends(get_current_use
 async def get_tasks(current_user: User = Depends(get_current_user), sort_by: str = None, filter_by: str = None):
     return app.services.get_tasks(current_user, sort_by, filter_by)
 
-@router.put("/tasks/{task_id}/reorder")
+@router.put("/tasks/{task_id}/reorder") 
 async def reorder_task(task_id: str, new_position: int, current_user: User = Depends(get_current_user)):
     return app.services.reorder_task(task_id, new_position, current_user)
 

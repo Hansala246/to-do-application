@@ -13,15 +13,15 @@ class User(BaseModel):
     user_pw:str
 
 class Todos(BaseModel):
-    # task_id: Optional[str]
+    task_id: Optional[str]
     task: str
     completed: Optional[bool]
     priority: Optional[int]
     due_date: Optional[datetime]
 
-class GetTodos(BaseModel):
-    task_id: Optional[str]  # Include task_id as an optional field
-    task: str
-    completed: Optional[bool]
-    priority: Optional[int]
-    due_date: Optional[datetime] 
+# class GetTodos(BaseModel):
+#     task_id: Optional[str]  # Include task_id as an optional field
+#     task: str
+#     completed: Optional[bool]
+#     priority: Optional[int]
+#     due_date: Optional[datetime] 

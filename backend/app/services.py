@@ -1,6 +1,6 @@
 # services.py
 from app.database import collection_user,collection_todo
-from app.models import User,Todos,GetTodos
+from app.models import User,Todos
 from app.utils import hash_password, verify_password, create_access_token,authenticate_user
 from datetime import timedelta
 from fastapi import HTTPException
@@ -91,17 +91,19 @@ def delete_task(task_id: str, current_user):
     collection_todo.delete_one({"task_id": task_id})
     return {"message": "Task deleted successfully"}
 
-def get_tasks(current_user, sort_by: str = None, filter_by: str = None) -> List[GetTodos]:
+def get_tasks(current_user, sort_by: str = None, filter_by: str = None) -> List[Todos]:
     query = {"user_email": current_user["user_email"]}
     if filter_by:
-        query["completed"] = filter_by.lower() == "completed"
+        if filter_by.lower() == "completed":
+            query["completed"] = True
     tasks = collection_todo.find(query)
     if sort_by:
         if sort_by == "due_date":
             tasks = tasks.sort("due_date", DESCENDING)
         elif sort_by == "priority":
             tasks = tasks.sort("priority", DESCENDING)
-    return [GetTodos(**task) for task in tasks]
+    return list(tasks)
+
 
 def reorder_task(task_id: str, new_position: int, current_user):
     tasks = list(collection_todo.find({"user_email": current_user["user_email"]}).sort("order"))
@@ -119,3 +121,4 @@ def get_tasks2(task_id: str, current_user):
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
     return task
+

@@ -35,7 +35,7 @@ form.addEventListener('submit', async function(event) {
             console.log('Token:', access_token);
 
             // Example: Redirect to a different page
-            window.location.href = 'todo2.html';
+            window.location.href = 'todo.html';
         } catch (error) {
             console.error('Login error:', error.message);
             showAlert('Invalid credentials');
