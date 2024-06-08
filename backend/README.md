@@ -9,7 +9,7 @@ This is a todoapp project using fastapi and mongodb for backend.
 3. Install dependencies using `pip install -r requirements.txt`.
 
 
-## Database congiguration
+## Database configuration
 
 ### Local MongoDB
 
